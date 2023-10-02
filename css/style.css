@@ -1,0 +1,729 @@
+@import url(https://fonts.googleapis.com/css?family=Jost:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
+
+@import url(https://fonts.googleapis.com/css?family=JetBrains+Mono:100,200,300,regular,500,600,700,800,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic);
+
+@import url(https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900);
+
+@charset "UTF-8";
+
+* {
+  padding: 0px;
+  margin: 0px;
+  border: 0px;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  min-width: 320px;
+}
+
+body {
+  background-color: #303030;
+  color: #fff;
+  line-height: 1;
+  font-family: "Jost";
+  font-size: 0.875rem;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+input,
+button,
+textarea {
+  font-family: "Jost";
+  font-size: inherit;
+}
+
+button {
+  cursor: pointer;
+  color: inherit;
+  background-color: inherit;
+}
+
+a {
+  color: inherit;
+}
+
+a:link,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
+  font-size: inherit;
+}
+
+.lock body {
+  overflow: hidden;
+  -ms-touch-action: none;
+      touch-action: none;
+}
+
+.wrapper {
+  min-height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  overflow: hidden;
+}
+
+.wrapper > main {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+}
+
+.wrapper > * {
+  min-width: 0;
+}
+
+/*
+(i) Стили будут применяться ко 
+всем классам содержащим *__container
+Например header__container, main__container и т.д.
+Снипет (HTML): cnt
+*/
+
+[class*=__container] {
+  max-width: 72.5rem;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  margin: 0 auto;
+  padding: 0 0.9375rem;
+}
+
+[class*=-ibg] {
+  position: relative;
+}
+
+[class*=-ibg] img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+[class*=-ibg_contain] img {
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.icon-menu {
+  display: none;
+}
+
+.header__container_down {
+  margin-bottom: 100px;
+}
+
+.body-header {
+  padding-top: 20px;
+}
+
+.up-header-body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-bottom: 15px;
+  gap: 60px;
+  color: #fff;
+  font-family: Jost;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 25px;
+  /* 178.571% */
+}
+
+@supports (gap: clamp( 0.625rem , -2.9464285714rem  +  7.4404761905vw , 3.75rem )) {
+  .up-header-body {
+    gap: clamp( 0.625rem , -2.9464285714rem  +  7.4404761905vw , 3.75rem );
+  }
+}
+
+@supports not (gap: clamp( 0.625rem , -2.9464285714rem  +  7.4404761905vw , 3.75rem )) {
+  .up-header-body {
+    gap: calc(0.625rem + 3.125 * (100vw - 48rem) / 42);
+  }
+}
+
+.logo-body-header-up {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 50%;
+          flex: 0 1 50%;
+}
+
+.tel-body-header-up__item-tel {
+  white-space: nowrap;
+}
+
+.tel-body-header-up__item-tel:hover {
+  color: #ebd9b6;
+}
+
+.soc-body-header-up {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 25px;
+}
+
+@supports (gap: clamp( 1.125rem , 0.625rem  +  1.0416666667vw , 1.5625rem )) {
+  .soc-body-header-up {
+    gap: clamp( 1.125rem , 0.625rem  +  1.0416666667vw , 1.5625rem );
+  }
+}
+
+@supports not (gap: clamp( 1.125rem , 0.625rem  +  1.0416666667vw , 1.5625rem )) {
+  .soc-body-header-up {
+    gap: calc(1.125rem + 0.4375 * (100vw - 48rem) / 42);
+  }
+}
+
+.soc-body-header-up__icon {
+  cursor: pointer;
+}
+
+.soc-body-header-up__icon:hover {
+  -webkit-transition: 0.1s;
+  transition: 0.1s;
+  -webkit-transform: scale(1.2);
+      -ms-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+.soc-body-header-up__icon_hide {
+  display: none;
+}
+
+.basket-body-header-up__icon {
+  width: 23.8px;
+  height: 22.84px;
+}
+
+.menu__wrap-button {
+  position: relative;
+  z-index: 33;
+  background-color: #fff;
+  border-radius: 0% 50% 50% 0%;
+  padding: 10px;
+  -webkit-transform: translate(-24px, 200px);
+      -ms-transform: translate(-24px, 200px);
+          transform: translate(-24px, 200px);
+  display: none;
+}
+
+.menu__link:hover {
+  color: #ebd9b6;
+}
+
+.header-border {
+  border-bottom: 1px solid #fff;
+}
+
+.body-header-down {
+  padding-top: 22px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.menu__list {
+  z-index: 3;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 60px;
+  color: #fff;
+  text-align: center;
+  font-family: Jost;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 25px;
+  /* 138.889% */
+}
+
+@supports (gap: clamp( 0.625rem , -2.9464285714rem  +  7.4404761905vw , 3.75rem )) {
+  .menu__list {
+    gap: clamp( 0.625rem , -2.9464285714rem  +  7.4404761905vw , 3.75rem );
+  }
+}
+
+@supports not (gap: clamp( 0.625rem , -2.9464285714rem  +  7.4404761905vw , 3.75rem )) {
+  .menu__list {
+    gap: calc(0.625rem + 3.125 * (100vw - 48rem) / 42);
+  }
+}
+
+.search-down-header-body {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.search-down-header-body__icon {
+  position: absolute;
+  top: 23%;
+  left: 6%;
+}
+
+.search-down-header-body__text {
+  background: transparent;
+  color: #fff;
+  padding: 10px 10px 10px 40px;
+  border-radius: 10px;
+  border: #fff 1px solid;
+}
+
+.search-down-header-body__text :focus {
+  border: #fff 1px solid;
+}
+
+.menu-open .menu__list {
+  -webkit-transform: translate(0px, 0px);
+      -ms-transform: translate(0px, 0px);
+          transform: translate(0px, 0px);
+}
+
+.menu-open .menu__list ._active {
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  -webkit-transform: translate(0px, 0px);
+      -ms-transform: translate(0px, 0px);
+          transform: translate(0px, 0px);
+}
+
+.menu-open .icon-menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-self: flex-end;
+  -webkit-box-ordinal-group: 66;
+      -ms-flex-order: 65;
+          order: 65;
+}
+
+.mail-body-header-up__text:hover {
+  color: #ebd9b6;
+}
+
+.ecological-gypsum-products__container {
+  padding: 0px 55px;
+}
+
+.ecological-gypsum-products__bg {
+  position: absolute;
+  z-index: -10;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.ecological-gypsum-products__bg img {
+  width: 100%;
+  height: 100%;
+}
+
+.body-products-gypsum-ecological {
+  position: relative;
+}
+
+.body-products-gypsum-ecological__title {
+  margin-bottom: 71px;
+}
+
+@supports (margin-bottom: clamp( 1.5625rem , -1.7232142857rem  +  6.8452380952vw , 4.4375rem )) {
+  .body-products-gypsum-ecological__title {
+    margin-bottom: clamp( 1.5625rem , -1.7232142857rem  +  6.8452380952vw , 4.4375rem );
+  }
+}
+
+@supports not (margin-bottom: clamp( 1.5625rem , -1.7232142857rem  +  6.8452380952vw , 4.4375rem )) {
+  .body-products-gypsum-ecological__title {
+    margin-bottom: calc(1.5625rem + 2.875 * (100vw - 48rem) / 42);
+  }
+}
+
+.title-ecological-gypsum-products-body {
+  font-family: JetBrains Mono;
+  font-size: 86px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 95px;
+  text-transform: uppercase;
+  max-width: 882px;
+}
+
+@supports (font-size: clamp( 1.5rem , -2.9285714286rem  +  9.2261904762vw , 5.375rem )) {
+  .title-ecological-gypsum-products-body {
+    font-size: clamp( 1.5rem , -2.9285714286rem  +  9.2261904762vw , 5.375rem );
+  }
+}
+
+@supports not (font-size: clamp( 1.5rem , -2.9285714286rem  +  9.2261904762vw , 5.375rem )) {
+  .title-ecological-gypsum-products-body {
+    font-size: calc(1.5rem + 3.875 * (100vw - 48rem) / 42);
+  }
+}
+
+@supports (line-height: clamp( 1.875rem , -2.7678571429rem  +  9.6726190476vw , 5.9375rem )) {
+  .title-ecological-gypsum-products-body {
+    line-height: clamp( 1.875rem , -2.7678571429rem  +  9.6726190476vw , 5.9375rem );
+  }
+}
+
+@supports not (line-height: clamp( 1.875rem , -2.7678571429rem  +  9.6726190476vw , 5.9375rem )) {
+  .title-ecological-gypsum-products-body {
+    line-height: calc(1.875rem + 4.0625 * (100vw - 48rem) / 42);
+  }
+}
+
+.title-ecological-gypsum-products-body__span {
+  color: #ead9b7;
+}
+
+.content-body-products-gypsum-ecological-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 100px;
+}
+
+@supports (gap: clamp( 0.625rem , -5.8035714286rem  +  13.3928571429vw , 6.25rem )) {
+  .content-body-products-gypsum-ecological-title {
+    gap: clamp( 0.625rem , -5.8035714286rem  +  13.3928571429vw , 6.25rem );
+  }
+}
+
+@supports not (gap: clamp( 0.625rem , -5.8035714286rem  +  13.3928571429vw , 6.25rem )) {
+  .content-body-products-gypsum-ecological-title {
+    gap: calc(0.625rem + 5.625 * (100vw - 48rem) / 42);
+  }
+}
+
+.content-body-products-gypsum-ecological-title__text {
+  color: #fff;
+  font-family: Jost;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 25px;
+  /* 113.636% */
+  max-width: 545px;
+  text-align: center;
+}
+
+@supports (font-size: clamp( 1rem , 0.5714285714rem  +  0.8928571429vw , 1.375rem )) {
+  .content-body-products-gypsum-ecological-title__text {
+    font-size: clamp( 1rem , 0.5714285714rem  +  0.8928571429vw , 1.375rem );
+  }
+}
+
+@supports not (font-size: clamp( 1rem , 0.5714285714rem  +  0.8928571429vw , 1.375rem )) {
+  .content-body-products-gypsum-ecological-title__text {
+    font-size: calc(1rem + 0.375 * (100vw - 48rem) / 42);
+  }
+}
+
+.catalog-button-title-ecological-gypsum-products-body-content {
+  color: #303030;
+  text-align: center;
+  font-family: Jost;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 25px;
+  /* 138.889% */
+  border-radius: 10px;
+  background: #ead9b7;
+  color: #000;
+  padding: 11px 69px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  cursor: pointer;
+}
+
+@supports (font-size: clamp( 1rem , 0.8571428571rem  +  0.2976190476vw , 1.125rem )) {
+  .catalog-button-title-ecological-gypsum-products-body-content {
+    font-size: clamp( 1rem , 0.8571428571rem  +  0.2976190476vw , 1.125rem );
+  }
+}
+
+@supports not (font-size: clamp( 1rem , 0.8571428571rem  +  0.2976190476vw , 1.125rem )) {
+  .catalog-button-title-ecological-gypsum-products-body-content {
+    font-size: calc(1rem + 0.125 * (100vw - 48rem) / 42);
+  }
+}
+
+.catalog-button-title-ecological-gypsum-products-body-content:hover {
+  background: #e3c996;
+}
+
+.img-wrap-ecological-gypsum-products-body__img {
+  position: absolute;
+  top: -22%;
+  right: -10%;
+  z-index: -2;
+  width: 40%;
+  margin-bottom: 35px;
+}
+
+@media (max-width: 74em) {
+  .content-body-products-gypsum-ecological-title {
+    max-width: 675px;
+  }
+}
+
+@media (max-width: 68.125em) {
+  .title-ecological-gypsum-products-body {
+    max-width: 600px;
+  }
+}
+
+@media (max-width: 61.4375em) {
+  .content-body-products-gypsum-ecological-title__text {
+    max-width: 371px;
+  }
+}
+
+@media (max-width: 58.9375em) {
+  .catalog-button-title-ecological-gypsum-products-body-content {
+    padding: 11px 53px;
+  }
+}
+
+@media (max-width: 50.5625em) {
+  .content-body-products-gypsum-ecological-title__text {
+    max-width: 332px;
+  }
+}
+
+@media (max-width: 47.99875em) {
+  .icon-menu {
+    display: block;
+    position: relative;
+    width: 1rem;
+    height: 1rem;
+    cursor: pointer;
+    z-index: 5;
+  }
+
+  .icon-menu span,
+  .icon-menu::before,
+  .icon-menu::after {
+    content: "";
+    -webkit-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+    right: 0;
+    position: absolute;
+    width: 100%;
+    height: 0.125rem;
+    background-color: #000;
+  }
+
+  .icon-menu::before {
+    top: 0;
+  }
+
+  .icon-menu::after {
+    bottom: 0;
+  }
+
+  .icon-menu span {
+    top: calc(50% - 0.0625rem);
+  }
+
+  .menu-open .icon-menu span {
+    width: 0;
+  }
+
+  .menu-open .icon-menu::before {
+    top: calc(50% - 0.0625rem);
+    -webkit-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+  }
+
+  .menu-open .icon-menu::after {
+    bottom: calc(50% - 0.0625rem);
+    -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+  }
+
+  .header__container_down {
+    margin-bottom: 40px;
+  }
+
+  .logo-body-header-up {
+    -webkit-box-flex: 1;
+        -ms-flex: auto;
+            flex: auto;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 2%;
+            flex: 0 1 2%;
+  }
+
+  .tel-body-header-up {
+    display: none;
+  }
+
+  .tel-body-header-up__item-tel {
+    display: none;
+  }
+
+  .soc-body-header-up__icon_viber {
+    display: none;
+  }
+
+  .soc-body-header-up__icon_hide {
+    display: block;
+  }
+
+  .menu__wrap-button {
+    display: block;
+  }
+
+  .menu__list {
+    background-color: #000;
+    display: none;
+    color: #fff;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    padding: 30px 30px 0px 30px;
+    -webkit-transform: translate(-100%, 0px);
+        -ms-transform: translate(-100%, 0px);
+            transform: translate(-100%, 0px);
+    -webkit-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+    overflow: auto;
+  }
+
+  .mail-body-header-up {
+    display: none;
+  }
+
+  .mail-body-header-up__text {
+    display: none;
+  }
+
+  .body-products-gypsum-ecological {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+
+  .title-ecological-gypsum-products-body {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+    text-align: center;
+  }
+
+  .content-body-products-gypsum-ecological-title {
+    -webkit-box-ordinal-group: 4;
+        -ms-flex-order: 3;
+            order: 3;
+  }
+
+  .content-body-products-gypsum-ecological-title__text {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+    margin-bottom: 15px;
+  }
+
+  .img-wrap-ecological-gypsum-products-body__img {
+    position: static;
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+}
+
+@media (max-width: 29.99875em) {
+  .img-wrap-ecological-gypsum-products-body__img {
+    width: 81%;
+  }
+}
